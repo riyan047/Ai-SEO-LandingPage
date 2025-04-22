@@ -55,7 +55,6 @@ export const Features = () => {
         <div className="aspect-video bg-cover border border-white/20 rounded-lg " style={{
           backgroundImage: `url(${productImage.src})`
         }}></div>
-          {/* <Image src={productImage} alt="" className="" /> */}
         </div>
       </div>
     </section>)
