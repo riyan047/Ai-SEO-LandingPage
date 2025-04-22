@@ -14,7 +14,7 @@ export const LogoTicker = () => {
         <div className='flex-1 md:flex-none'>
           <h2>Trusted by top innovative teams</h2>
         </div>
-        <div className='flex-1 md:flex-none overflow-hidden w-[777px] [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]'>
+        <div className='flex-1 md:flex-none overflow-hidden w-28 md:w-[465px] lg:w-[777px] [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]'>
           <div className='flex flex-none gap-14'>
             {[apexLogo, acmeLogo, celestialLogo, quantumLogo, pulseLogo, echoLogo].map((logo) => (
               <img src={logo.src} key={logo.src} className='h-6 w-auto' />
