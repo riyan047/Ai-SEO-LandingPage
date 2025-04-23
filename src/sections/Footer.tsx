@@ -18,8 +18,8 @@ export const Footer = () => {
             <a href="" className='text-white/70 hover:text-white text-xs md:text-sm transition'>Changelog</a>
           </nav>
           <div className='flex gap-5 lg:flex-1 lg:justify-end'>
-            <XSocial className='text-white/40 hover:text-white transition'/>
-            <LinkedInSocial className='text-white/40 hover:text-white transition '/>
+            <a href="https://x.com/Riyan50889755" target='_blank'><XSocial className='text-white/40 hover:text-white transition' /></a>
+            <a href="https://www.linkedin.com/in/riyan-g/" target='_blank'><LinkedInSocial className='text-white/40 hover:text-white transition ' /></a>
           </div>
         </div>
       </div>
