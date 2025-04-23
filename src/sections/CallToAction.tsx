@@ -20,7 +20,7 @@ export const CallToAction = () => {
             <h2 className="text-5xl md:text-6xl max-w-sm mx-auto tracking-tighter text-center font-medium">AI-driven SEO for everyone.</h2>
             <p className="text-lg md:text-xl max-w-xs mx-auto tracking-tight text-center text-white/70 px-4 mt-5">Achieve clear, impactful results without the complexity.</p>
             <div className="flex justify-center mt-8">
-              
+              <Button>Join waitlist</Button>
             </div>
           </div>
         </div>
