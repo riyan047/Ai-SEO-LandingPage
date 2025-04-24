@@ -132,7 +132,7 @@ export const Features = () => {
     );
     animate(
       backgroundPositionY,
-      [backgroundPositionY.get(), tabs[index].backgroundPositionX],
+      [backgroundPositionY.get(), tabs[index].backgroundPositionY],
       animateOptions
     );
 
