@@ -4,6 +4,7 @@ import Image from "next/image";
 import productImage from '@/assets/product-image.png'
 import { ComponentPropsWithoutRef, useEffect, useRef, useState } from "react";
 import { useMotionTemplate, useMotionValue, motion, animate, ValueAnimationTransition } from "framer-motion";
+import arrowImage from '@/assets/try-clickingArrow.png'
 
 const tabs = [
   {
@@ -135,14 +136,17 @@ export const Features = () => {
       [backgroundPositionY.get(), tabs[index].backgroundPositionY],
       animateOptions
     );
-
-    
   }
 
   return (
     <section className="py-20 md:py-24">
-      <div className="container">
+      <div className="container relative">
         <h2 className="text-5xl md:text-6xl font-medium text-center tracking-tighter">Elevate your SEO efforts.</h2>
+        <Image
+          src={arrowImage}
+          alt="Click Arrow"
+          className="absolute md:w-44 md:h-44 hidden lg:block lg:top-[80px] lg:left-[1075px] z-10"
+        />
         <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto text-center tracking-tight mt-5">From small startups to large enterprises, our AI-driven tool
           has revolutionized the way businesses approach SEO.</p>
         <div className="mt-10 flex flex-col gap-3 lg:flex-row">
@@ -150,7 +154,7 @@ export const Features = () => {
             <FeatureTab
               {...tab}
               selected={selectedTab === tabIndex}
-              onClick={()=>handleSelectTab(tabIndex)}
+              onClick={() => handleSelectTab(tabIndex)}
               key={tab.title} />
           ))}
         </div>
