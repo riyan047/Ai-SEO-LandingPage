@@ -1,7 +1,8 @@
 "use client"
-import { DotLottiePlayer } from "@dotlottie/react-player";
+import { DotLottieCommonPlayer, DotLottiePlayer } from "@dotlottie/react-player";
 import Image from "next/image";
 import productImage from '@/assets/product-image.png'
+import { useRef } from "react";
 
 const tabs = [
   {
@@ -30,6 +31,29 @@ const tabs = [
   },
 ];
 
+const FeatureTab = (tab: typeof tabs[number]) => {
+  const dotLottieRef = useRef<DotLottieCommonPlayer>(null);
+
+  const handleTabHover = () => {
+    if(dotLottieRef.current === null) return;
+    dotLottieRef.current.seek(0)
+    dotLottieRef.current.play()
+  };
+
+  return (
+    <div onMouseEnter={handleTabHover} className="border border-white/15 flex p-2.5 rounded-xl gap-2.5 items-center lg:flex-1">
+      <div className="h-12 w-12 border border-white/15 rounded-lg inline-flex justify-center items-center">
+        <DotLottiePlayer ref={dotLottieRef} src={tab.icon} className='h-5 w-5' autoplay />
+      </div>
+      <div className="font-medium">
+        {tab.title}
+      </div>
+      {tab.isNew && <div className="text-xs rouned-full px-2 py-0.5 bg-[#8c44ff] rounded-lg text-black font-semibold">new</div>
+      }
+    </div>
+  )
+}
+
 export const Features = () => {
   return (
     <section className="py-20 md:py-24">
@@ -39,22 +63,13 @@ export const Features = () => {
           has revolutionized the way businesses approach SEO.</p>
         <div className="mt-10 flex flex-col gap-3 lg:flex-row">
           {tabs.map(tab => (
-            <div key={tab.title} className="border border-white/15 flex p-2.5 rounded-xl gap-2.5 items-center lg:flex-1">
-              <div className="h-12 w-12 border border-white/15 rounded-lg inline-flex justify-center items-center">
-                <DotLottiePlayer src={tab.icon} className='h-5 w-5' autoplay />
-              </div>
-              <div className="font-medium">
-                {tab.title}
-              </div>
-              {tab.isNew && <div className="text-xs rouned-full px-2 py-0.5 bg-[#8c44ff] rounded-lg text-black font-semibold">new</div>
-              }
-            </div>
+            <FeatureTab {...tab} key={tab.title} />
           ))}
         </div>
         <div className="border border-white/20 p-2.5 rounded-xl mt-3 ">
-        <div className="aspect-video bg-cover border border-white/20 rounded-lg " style={{
-          backgroundImage: `url(${productImage.src})`
-        }}></div>
+          <div className="aspect-video bg-cover border border-white/20 rounded-lg " style={{
+            backgroundImage: `url(${productImage.src})`
+          }}></div>
         </div>
       </div>
     </section>)
