@@ -5,6 +5,7 @@ import productImage from '@/assets/product-image.png'
 import { ComponentPropsWithoutRef, useEffect, useRef, useState } from "react";
 import { useMotionTemplate, useMotionValue, motion, animate, ValueAnimationTransition } from "framer-motion";
 import arrowImage from '@/assets/try-clickingArrow.png'
+import arrowImageImp from '@/assets/arrowLeftImp.png'
 
 const tabs = [
   {
@@ -143,9 +144,9 @@ export const Features = () => {
       <div className="container relative">
         <h2 className="text-5xl md:text-6xl font-medium text-center tracking-tighter">Elevate your SEO efforts.</h2>
         <Image
-          src={arrowImage}
+          src={arrowImageImp}
           alt="Click Arrow"
-          className="absolute md:w-44 md:h-44 hidden lg:block lg:top-[80px] lg:left-[1075px] z-10"
+          className="absolute h-24 w-24 hidden lg:block lg:top-[120px] lg:left-[1100px] z-10"
         />
         <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto text-center tracking-tight mt-5">From small startups to large enterprises, our AI-driven tool
           has revolutionized the way businesses approach SEO.</p>
