@@ -74,7 +74,7 @@ export const CallToAction = () => {
           <motion.div
             className="absolute inset-0 bg-[rgba(74,32,138)] bg-blend-overlay [] opacity-0 group-hover:opacity-100 transition duration-700"
             style={{
-              
+              maskImage,
               backgroundImage: `url(${gridLines.src})`
             }}
           ></motion.div>
