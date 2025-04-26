@@ -55,14 +55,14 @@ export const Testimonials = () => {
               repeat:Infinity
             }}
             className="flex gap-5 pr-5 flex-none ">
-            {[...testimonials, ...testimonials].map(testimonial => (
-              <div key={testimonial.name} className="border border-white/15 p-6 md:p-10 rounded-xl bg-[linear-gradient(to_bottom_left,rgb(140,69,255,0.3),black)] max-w-xs md:max-w-md flex-none">
+            {[...testimonials, ...testimonials].map((testimonial,index) => (
+              <div key={`${testimonial.name}-${index}`} className="border border-white/15 p-6 md:p-10 rounded-xl bg-[linear-gradient(to_bottom_left,rgb(140,69,255,0.3),black)] max-w-xs md:max-w-md flex-none">
                 <div className="text-lg tracking-tight md:text-2xl">{testimonial.text}</div>
                 <div className="flex items-center gap-3 mt-5 ">
-                  <div className="relative before:content[''] before:inset-0 before:absolute before:border before:border-white/30 before:z-10 before:rounded-lg after:content[''] after:inset-0 after:absolute after:bg-[rgb(140,69,244)] after:mix-blend-soft-light">
+                  <div className="relative after:rounded-lg before:content-[''] before:inset-0 before:absolute before:border before:border-white/30 before:z-10 before:rounded-lg after:content[''] after:inset-0 after:absolute after:bg-[rgb(140,69,244)] after:mix-blend-soft-light">
                     <Image
                       src={testimonial.avatarImg}
-                      alt={`Avavtor for ${testimonial.name}`}
+                      alt={`Avator for ${testimonial.name}`}
                       className="h-11 w-11 rounded-lg grayscale "
                     />
                   </div>
